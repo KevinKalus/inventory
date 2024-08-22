@@ -8,7 +8,7 @@ export const Navbar = () => {
       <Button label={'Decks'} href={'#0'} />
       <Button label={'Favorites'} href={'#0'} />
       <Button label={'Profile'} href={'#0'} />
-      <Button label={'Login'} href={'#0'} />
+      <Button label={'Login'} href={'/login'} />
       <Button label={'Sign up'} href={'#0'} />
     </section>
   );
