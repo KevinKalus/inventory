@@ -56,9 +56,9 @@
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-storybook": "0.8.0",
-    "husky": "9.1.4",
+    "husky": "9.1.5",
     "jsdom": "24.1.0",
-    "lint-staged": "15.2.8",
+    "lint-staged": "15.2.9",
     "msw": "2.3.1",
     "postcss": "8.4.41",
     "prettier": "3.3.3",
@@ -67,7 +67,7 @@
     "tailwindcss": "3.4.7",
     "tsconfig-paths-webpack-plugin": "4.1.0",
     "typescript": "5.5.3",
-    "vercel": "35.2.2",
+    "vercel": "37.0.0",
     "vite-tsconfig-paths": "4.3.2",
     "vitest": "1.6.0"
   }
