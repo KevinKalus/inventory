@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { FC } from 'react';
 
-// import { Login } from '@/app/actions';
+import { Login } from '@/app/actions';
 
 interface LoginProps {
   className?: string;
@@ -12,7 +12,7 @@ interface LoginProps {
 export const LoginForm: FC<LoginProps> = ({ className, login }) => {
   return (
     <div className={clsx('flex flex-col border-2', className)}>
-      <form className="m-4">
+      <form className="m-4" action={Login}>
         <h1 className="text-center underline underline-offset-4">Login</h1>
         <p>Email</p>
         <input type="email" name="email" required className="w-full border-2" />

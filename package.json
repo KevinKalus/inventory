@@ -32,7 +32,8 @@
     "react-dom": "18.3.1",
     "sql": "0.78.0",
     "tailwind-merge": "2.5.2",
-    "tailwindcss-animate": "1.0.7"
+    "tailwindcss-animate": "1.0.7",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "8.2.7",
