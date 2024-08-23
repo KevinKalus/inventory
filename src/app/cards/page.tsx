@@ -1,11 +1,10 @@
-'use client';
-
-// https://pokeapi.co/api/v2/pokemon/
+import { CardsGrid } from '@/components/Organisms/CardsGrid/CardsGrid';
+import { mockCards } from '@/mocks/mockCards';
 
 export default function Home() {
   return (
-    <main className="flex h-full items-center justify-center">
-      <div></div>
-    </main>
+    <>
+      <CardsGrid cards={mockCards} />
+    </>
   );
 }

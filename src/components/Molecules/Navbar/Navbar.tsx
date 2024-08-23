@@ -1,15 +1,31 @@
-import { Button } from '../../Atoms/Button/Button';
+import Link from 'next/link';
+import { FC } from 'react';
 
-export const Navbar = () => {
+import { guestLinks, userLinks } from './NavLinks';
+
+interface NavbarProps {
+  loggedIn: boolean;
+}
+
+export const Navbar: FC<NavbarProps> = ({ loggedIn }) => {
   return (
-    <section className="mt-5 flex justify-around">
-      <Button label={'Home'} href={'/'} />
-      <Button label={'Cards'} href={'/cards'} />
-      <Button label={'Decks'} href={'#0'} />
-      <Button label={'Favorites'} href={'#0'} />
-      <Button label={'Profile'} href={'#0'} />
-      <Button label={'Login'} href={'/login'} />
-      <Button label={'Sign up'} href={'#0'} />
-    </section>
+    <ul className="mb-14 mt-5 flex justify-around">
+      {loggedIn
+        ? userLinks.map((e, index) => (
+            <li key={index}>
+              <Link href={e.ref}>{e.label}</Link>
+            </li>
+          ))
+        : guestLinks.map((e, index) => (
+            <li key={index}>
+              <Link href={e.ref}>{e.label}</Link>
+            </li>
+          ))}
+      {loggedIn ? (
+        <li>
+          <button>Log out</button>
+        </li>
+      ) : null}
+    </ul>
   );
 };

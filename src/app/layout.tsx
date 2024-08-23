@@ -14,8 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className={clsx(inter.className, 'bg-gray-400')}>
-        <Navbar />
+      <body className={clsx(inter.className, 'flex flex-col bg-gray-400')}>
+        <Navbar loggedIn={false} />
         {children}
       </body>
     </html>

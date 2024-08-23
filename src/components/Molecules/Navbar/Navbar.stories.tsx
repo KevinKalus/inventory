@@ -5,7 +5,9 @@ import { Navbar } from './Navbar';
 export default {
   title: 'Components/Molecules/Navbar',
   component: Navbar,
-  args: {},
+  args: {
+    loggedIn: false,
+  },
 } satisfies Meta<typeof Navbar>;
 
 export const Default: StoryObj<typeof Navbar> = {};
