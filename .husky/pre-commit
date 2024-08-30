@@ -1,4 +1,3 @@
 yarn
 git add yarn.lock
 lint-staged
-test

@@ -6,7 +6,6 @@ import { Inter } from 'next/font/google';
 import { Navbar } from '@/components/Molecules/Navbar/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html>
       <body className={clsx(inter.className, 'flex flex-col bg-gray-400')}>
-        <Navbar loggedIn={false} />
+        <Navbar />
         {children}
       </body>
     </html>

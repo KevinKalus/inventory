@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { FC } from 'react';
 
+import { imageProps } from '@/Types/Card';
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -11,9 +12,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
-import { imageProps } from '@/Types/Card';
+} from '@/ui/alert-dialog';
+import { Button } from '@/ui/button';
 
 interface ModalButtonProps {
   label: string;
