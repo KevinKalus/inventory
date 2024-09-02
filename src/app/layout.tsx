@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className={clsx(inter.className, 'flex flex-col bg-gray-400')}>
+      <body className={clsx(inter.className, 'flex flex-col bg-[#8c90be]')}>
         <Navbar />
         {children}
       </body>

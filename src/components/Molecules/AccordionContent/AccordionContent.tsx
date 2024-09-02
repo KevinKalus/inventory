@@ -1,19 +1,26 @@
-import Link from 'next/link';
-import { FC } from 'react';
+import { m } from 'framer-motion';
+import { FC, ReactElement } from 'react';
 
 interface AccordionContentProps {
-  set: string;
-  title: string;
-  href: string;
+  children: ReactElement;
+  contentId: string;
 }
 
-export const AccordionContent: FC<AccordionContentProps> = ({ set, title, href }) => {
+export const AccordionContent: FC<AccordionContentProps> = ({ children, contentId }) => {
   return (
-    <Link className="w-full" type="button" href={href}>
-      <span className="flex justify-between border-b-[1px] border-black px-2">
-        <p>{set}</p>
-        <p> {title}</p>
-      </span>
-    </Link>
+    <m.div
+      initial="open"
+      animate="open"
+      exit="collapsed"
+      variants={{
+        open: { opacity: 1, height: 'auto' },
+        collapsed: { opacity: 0, height: 0 },
+      }}
+      transition={{ type: 'spring', duration: 0.5, bounce: 0 }}
+      id={contentId}
+      role="region"
+    >
+      {children}
+    </m.div>
   );
 };
