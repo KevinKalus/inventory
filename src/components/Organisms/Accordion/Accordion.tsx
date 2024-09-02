@@ -1,5 +1,4 @@
 'use client';
-import { AnimatePresence, m } from 'framer-motion';
 import { FC, ReactElement, useState } from 'react';
 
 import { AccordionTitle } from '@/components/Atoms/AccordionTitle/AccordionTitle';
@@ -17,33 +16,20 @@ export const Accordion: FC<AccordionProps> = ({ content }) => {
 
   return (
     <div>
-      <AnimatePresence initial={false}>
+      <div>
         {content.map((item, index) => (
-          <m.div
-            key={index}
-            initial="collapsed"
-            animate="open"
-            exit="collapsed"
-            variants={{
-              open: { opacity: 1, height: 'auto' },
-              collapsed: { opacity: 0, height: 0 },
-            }}
-            transition={{ type: 'spring', duration: 0.5, bounce: 0 }}
-          >
+          <div key={index}>
             <AccordionTitle
-              headerId={`${item.year}_${index}`}
               year={item.year}
               onClick={() => setExpanded(expanded === index ? false : index)}
               isExpanded={expanded === index}
             />
-            <AnimatePresence initial={false}>
-              {expanded === index && (
-                <AccordionContent contentId={`${item.year}_content_${index}`}>{item.content}</AccordionContent>
-              )}
-            </AnimatePresence>
-          </m.div>
+            <div className="animate-accordion-down">
+              {expanded === index && <AccordionContent>{item.content}</AccordionContent>}
+            </div>
+          </div>
         ))}
-      </AnimatePresence>
+      </div>
     </div>
   );
 };

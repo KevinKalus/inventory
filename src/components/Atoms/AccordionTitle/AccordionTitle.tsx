@@ -7,17 +7,11 @@ interface AccordionTitleProps {
   year: string;
   onClick: () => void;
   isExpanded: boolean;
-  headerId: string;
 }
 
-export const AccordionTitle: FC<AccordionTitleProps> = ({ year, onClick, isExpanded, headerId }) => {
+export const AccordionTitle: FC<AccordionTitleProps> = ({ year, onClick, isExpanded }) => {
   return (
-    <button
-      className="w-full gap-3 border-b-[1px] border-black text-right"
-      type="button"
-      onClick={onClick}
-      id={headerId}
-    >
+    <button className="w-full gap-3 border-b-[1px] border-black text-right" type="button" onClick={onClick}>
       <span className="flex items-center justify-between px-2">
         <p className="text-xl">{year}</p>
         <CircleArrowDown className={clsx({ 'rotate-180': isExpanded })} />
