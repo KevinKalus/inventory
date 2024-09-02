@@ -1,4 +1,4 @@
-import { Protected } from '@/components/utils/Protected';
+import { Protected } from '@/utils/Protected';
 
 import { getAuthorizedUser } from '../actions';
 
