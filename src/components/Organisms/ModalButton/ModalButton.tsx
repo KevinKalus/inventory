@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 import { FC } from 'react';
 
@@ -16,26 +15,23 @@ import {
 import { Button } from '@/ui/button';
 
 interface ModalButtonProps {
-  label: string;
-  className?: string;
   img: imageProps;
   description: string;
+  children?: React.ReactElement;
 }
 
-export const ModalButton: FC<ModalButtonProps> = ({ label, className, img, description }) => {
+export const ModalButton: FC<ModalButtonProps> = ({ img, description, children }) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="outline" className={clsx(className)}>
-          {label}
-        </Button>
+        <Button>{children}</Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="flex flex-col items-start">
         <AlertDialogHeader>
           <AlertDialogTitle>Card Name</AlertDialogTitle>
           <div className="flex">
-            <Image src={img.src} alt={img.alt} width={210} height={300} className="min-h-[300px] min-w-[210px]" />
-            <AlertDialogDescription className="ml-5 max-w-full text-left">
+            <Image src={img.src} alt={img.alt} width={100} height={100} className="min-h-[100px] min-w-[150px]" />
+            <AlertDialogDescription className="ml-2 max-w-full text-left">
               <p className="text-center underline underline-offset-4">Description of the Card</p>
               <br />
               {description}

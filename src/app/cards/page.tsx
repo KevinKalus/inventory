@@ -1,10 +1,9 @@
-import { CardsGrid } from '@/components/Organisms/CardsGrid/CardsGrid';
-import { mockCards } from '@/mocks/mockCards';
+import { Accordion } from '@/components/Organisms/Accordion/Accordion';
 
 export default function Home() {
   return (
     <>
-      <CardsGrid cards={mockCards} />
+      <Accordion />
     </>
   );
 }

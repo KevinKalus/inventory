@@ -1,35 +1,17 @@
-'use client';
-import { FC, ReactElement, useState } from 'react';
+import { mockCards } from '@/mocks/mockCards';
+import { mockSets } from '@/mocks/mockSets';
 
-import { AccordionTitle } from '@/components/Atoms/AccordionTitle/AccordionTitle';
-import { AccordionContent } from '@/components/Molecules/AccordionContent/AccordionContent';
+import { AccordionContent } from '../../Molecules/AccordionContent/AccordionContent';
+import { CardsGrid } from '../CardsGrid/CardsGrid';
 
-interface AccordionProps {
-  content: {
-    year: string;
-    content: ReactElement;
-  }[];
-}
-
-export const Accordion: FC<AccordionProps> = ({ content }) => {
-  const [expanded, setExpanded] = useState<false | number>(false);
-
+export const Accordion = () => {
   return (
-    <div>
-      <div>
-        {content.map((item, index) => (
-          <div key={index}>
-            <AccordionTitle
-              year={item.year}
-              onClick={() => setExpanded(expanded === index ? false : index)}
-              isExpanded={expanded === index}
-            />
-            <div className="animate-accordion-down">
-              {expanded === index && <AccordionContent>{item.content}</AccordionContent>}
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="m-4 divide-y divide-slate-200">
+      {mockSets.map((set, index) => (
+        <AccordionContent key={index} set={set.set} name={set.name}>
+          <CardsGrid cards={mockCards} />
+        </AccordionContent>
+      ))}
     </div>
   );
 };

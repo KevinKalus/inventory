@@ -13,20 +13,23 @@ interface CardProps {
 
 export const Card: FC<CardProps> = ({ img, name, id, description }) => {
   return (
-    <article className="relative flex max-w-52 flex-col">
-      <Image src={img.src} alt={img.alt} width={210} height={300} />
-      <div className="absolute z-10 m-2 flex flex-col gap-3 self-end">
-        <button className="rounded-full bg-cyan-300 px-2 hover:bg-green-300">+</button>
-        <button className="rounded-full bg-cyan-300 px-2 hover:bg-green-300">+</button>
-        <button className="rounded-full bg-cyan-300 px-2 hover:bg-green-300">+</button>
-        <button className="rounded-full bg-cyan-300 px-2 hover:bg-green-300">+</button>
+    <article className="flex flex-col">
+      <div className="mt-3 flex gap-1">
+        <ModalButton img={img} description={description ?? ''}>
+          <Image src={img.src} alt={img.alt} height={200} width={200} />
+        </ModalButton>
+        <div className="flex h-full flex-col gap-2">
+          <button className="rounded-2xl bg-red-400 px-3">+</button>
+          <button className="rounded-2xl bg-red-400 px-2">+</button>
+          <button className="rounded-2xl bg-red-400 px-2">+</button>
+          <button className="rounded-2xl bg-red-400 px-2">+</button>
+        </div>
       </div>
       <p className="mt-2 w-full">
         {`Name: ${name}`}
         <br />
         {`Card-ID: ${id}`}
       </p>
-      <ModalButton label={'show card'} img={img} className="mt-3" description={description ?? ''} />
     </article>
   );
 };

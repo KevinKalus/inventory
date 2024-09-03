@@ -11,10 +11,7 @@ export const guestLinks = [
     label: 'User Decks',
     ref: '/user-decks',
   },
-  {
-    label: 'Login',
-    ref: '/login',
-  },
+
   {
     label: 'Sign Up',
     ref: '/signup',

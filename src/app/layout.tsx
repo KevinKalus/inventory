@@ -3,6 +3,7 @@ import './globals.css';
 import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 
+import { BottomBar } from '@/components/Molecules/Navbar/BottomBar/BottomBar';
 import { Navbar } from '@/components/Molecules/Navbar/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -14,8 +15,11 @@ export default function RootLayout({
   return (
     <html>
       <body className={clsx(inter.className, 'flex flex-col bg-[#8c90be]')}>
-        <Navbar />
-        {children}
+        <main className="flex h-screen flex-col items-center justify-between">
+          <Navbar />
+          <div>{children}</div>
+          <BottomBar />
+        </main>
       </body>
     </html>
   );

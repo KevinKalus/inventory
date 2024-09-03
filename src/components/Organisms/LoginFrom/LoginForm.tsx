@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { FC } from 'react';
 
 import { Login, signUp } from '@/app/actions';
@@ -22,21 +22,23 @@ export const LoginForm: FC<LoginProps> = ({ className, login }) => {
 
         {login ? (
           <div className="mt-4 flex flex-col items-start gap-2">
-            <label className="mt-2 flex" htmlFor="">
+            {/* <label className="mt-2 flex" htmlFor="">
               <input className="mr-2 self-center" type="checkbox" />
               <p>Remember me?</p>
             </label>
             <Link href="#0" className="hover:underline">
               Forgot Password?
-            </Link>
+            </Link> */}
             <button className="rounded-xl border-2 px-2 hover:bg-white" type="submit">
               Login
             </button>
           </div>
         ) : (
-          <button className="mt-4 rounded-xl border-2 px-2 hover:bg-white" type="submit">
-            Sign Up
-          </button>
+          <div className="mt-4 flex flex-col items-start gap-2">
+            <button className="rounded-xl border-2 px-2 hover:bg-white" type="submit">
+              Sign Up
+            </button>
+          </div>
         )}
       </form>
     </div>
