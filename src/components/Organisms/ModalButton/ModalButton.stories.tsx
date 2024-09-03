@@ -6,7 +6,6 @@ export default {
   title: 'Components/Organisms/AlertDialog',
   component: ModalButton,
   args: {
-    label: 'show card',
     img: {
       alt: 'example image',
       src: 'https://picsum.photos/210/300',
