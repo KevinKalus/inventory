@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className={clsx(inter.className, 'flex flex-col bg-[#8c90be]')}>
         <main className="flex h-screen flex-col items-center justify-between">
           <Navbar />
-          <div>{children}</div>
+          {children}
           <BottomBar />
         </main>
       </body>

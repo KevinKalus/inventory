@@ -19,14 +19,14 @@ const Wrapper = ({
 }) => {
   return link ? (
     <Link
-      className="group relative mb-2 me-2 inline-flex items-center justify-center overflow-hidden rounded-lg from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:bg-gradient-to-br group-hover:from-purple-600 group-hover:to-blue-500"
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg from-purple-600 to-blue-500 text-sm font-medium text-gray-900"
       href={link}
     >
       {children}
     </Link>
   ) : (
     <button
-      className="group relative mb-2 me-2 inline-flex items-center justify-center overflow-hidden rounded-lg from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:bg-gradient-to-br group-hover:from-purple-600 group-hover:to-blue-500"
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg from-purple-600 to-blue-500 text-sm font-medium text-gray-900"
       onClick={onClick}
     >
       {children}
@@ -37,7 +37,7 @@ const Wrapper = ({
 export const Button: FC<ButtonProps> = ({ label, href }) => {
   return (
     <Wrapper link={href}>
-      <span className="relative rounded-md px-8 py-2.5 group-hover:bg-opacity-0 group-hover:text-white">{label}</span>
+      <span className="relative rounded-md px-2 text-white">{label}</span>
     </Wrapper>
   );
 };
