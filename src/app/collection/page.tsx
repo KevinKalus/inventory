@@ -7,7 +7,7 @@ export default async function Collection() {
 
   return (
     <Protected>
-      <div>{user?.nickname ? `Hello ${user?.nickname}` : 'Hello No-Nickname User'}</div>
+      <div>{user?.nickname ? `Here is your collection, ${user?.nickname}` : 'Hello No-Nickname User'}</div>
     </Protected>
   );
 }

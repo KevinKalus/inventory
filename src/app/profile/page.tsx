@@ -6,7 +6,7 @@ export default async function Collection() {
   const user = await getAuthorizedUser();
   return (
     <Protected>
-      <div>{`Hello ${user?.nickname}`}</div>
+      <div>{`This is your profile ${user?.nickname}`}</div>
     </Protected>
   );
 }

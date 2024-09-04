@@ -10,12 +10,13 @@ export const BottomBar = async () => {
         <div className="mb-5 flex w-full justify-around">
           <Link href={'/cards'}>Cards</Link>
           <Link href={'/collection'}>Collection</Link>
-          <Link href={'/profile'}>Profile</Link>{' '}
+          <Link href={'/profile'}>Profile</Link>
         </div>
       ) : (
         <div className="mb-5 flex w-full justify-around">
           <Link href={'/signup'}>Sign Up</Link>
-          <Link href={'/login'}>Login</Link>{' '}
+          <Link href={'/cards'}>Cards</Link>
+          <Link href={'/login'}>Login</Link>
         </div>
       )}
     </>
