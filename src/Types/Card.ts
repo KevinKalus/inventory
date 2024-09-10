@@ -7,5 +7,4 @@ export interface CardProps {
   img: imageProps;
   name: string;
   id: string;
-  description: string;
 }

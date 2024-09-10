@@ -1,3 +1,4 @@
+import { AlertDialogDescription } from '@radix-ui/react-alert-dialog';
 import Image from 'next/image';
 import { FC } from 'react';
 
@@ -6,7 +7,6 @@ import {
   AlertDialog,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
@@ -16,27 +16,20 @@ import { Button } from '@/ui/button';
 
 interface ModalButtonProps {
   img: imageProps;
-  description: string;
   children?: React.ReactElement;
 }
 
-export const ModalButton: FC<ModalButtonProps> = ({ img, description, children }) => {
+export const ModalButton: FC<ModalButtonProps> = ({ img, children }) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button>{children}</Button>
       </AlertDialogTrigger>
-      <AlertDialogContent className="flex flex-col items-start">
-        <AlertDialogHeader>
+      <AlertDialogContent>
+        <AlertDialogDescription />
+        <AlertDialogHeader className="flex flex-col items-center justify-center">
           <AlertDialogTitle>Card Name</AlertDialogTitle>
-          <div className="flex">
-            <Image src={img.src} alt={img.alt} width={100} height={100} className="min-h-[100px] min-w-[150px]" />
-            <AlertDialogDescription className="ml-2 max-w-full text-left">
-              <p className="text-center underline underline-offset-4">Description of the Card</p>
-              <br />
-              {description}
-            </AlertDialogDescription>
-          </div>
+          <Image src={img.src} alt={img.alt} width={100} height={100} className="min-h-[100px] min-w-[300px]" />
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Back</AlertDialogCancel>

@@ -12,8 +12,6 @@ export default {
     },
     name: 'luffy',
     id: 'op-01',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo in aspernatur reprehenderit, temporibus officia eaque pariatur sint deleniti nesciunt animi dolore atque suscipit vero impedit natus accusamus fuga facere. Facere.',
   },
 } satisfies Meta<typeof Card>;
 
