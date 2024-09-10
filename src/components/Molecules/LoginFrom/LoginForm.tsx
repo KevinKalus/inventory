@@ -12,7 +12,7 @@ interface LoginProps {
 export const LoginForm: FC<LoginProps> = ({ className, login }) => {
   return (
     <div className={clsx('flex flex-col border-2', className)}>
-      {/*  eslint-disable-next-line @typescript-eslint/no-misused-promises */}
+      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form className="m-4" action={login ? Login : signUp}>
         <h1 className="text-center underline underline-offset-4">{login ? 'Login' : 'Sign Up'}</h1>
         <p>Email</p>

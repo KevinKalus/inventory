@@ -59,3 +59,14 @@ export const logOut = () => {
   cookies().delete('user');
   redirect('/');
 };
+
+export const changeNickname = (formData: FormData) => {
+  const userId = cookies().get('user');
+  const newNickname = formData.get('nickname');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const changeName = sql`
+  UPDATE users
+  SET nickname = ${newNickname as string}
+  WHERE id = ${userId?.value}`;
+  return redirect('/profile');
+};
