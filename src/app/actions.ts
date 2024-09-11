@@ -70,3 +70,10 @@ export const changeNickname = (formData: FormData) => {
   WHERE id = ${userId?.value}`;
   return redirect('/profile');
 };
+
+export const deleteUser = () => {
+  const userId = cookies().get('user');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const deleteUser = sql`DELETE users WHERE id = ${userId?.value}`;
+  return redirect('/');
+};
