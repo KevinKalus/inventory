@@ -29,8 +29,8 @@ export const Modal: FC<ModalProps> = ({ children, label, card }) => {
             }}
           />
           <div className="flex flex-col">
-            <span>{card?.name}</span>
-            <span>{card?.id}</span>
+            <span>{`Name: ${card?.name}`}</span>
+            <span>{`ID: ${card?.id}`}</span>
           </div>
         </div>
       ) : (
