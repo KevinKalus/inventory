@@ -17,17 +17,17 @@ export const Default: StoryObj<typeof AccordionContent> = {
       cards: [
         {
           img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-          name: 'luffy',
+          name: 'character-name',
           id: 'op01-001',
         },
         {
           img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-          name: 'luffy',
+          name: 'character-name',
           id: 'op01-001',
         },
         {
           img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-          name: 'luffy',
+          name: 'character-name',
           id: 'op01-001',
         },
       ],

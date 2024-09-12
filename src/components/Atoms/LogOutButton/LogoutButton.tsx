@@ -8,6 +8,7 @@ export const LogOutButton = () => {
       onClick={() => {
         logOut();
       }}
+      className="rounded-md border border-black p-2"
     >
       Logout
     </button>

@@ -10,7 +10,9 @@ export const Navbar = async () => {
     <span className="w-screen">
       {user ? (
         <div className="m-4 flex justify-between">
-          <Link href={'/'}>Home</Link>
+          <Link href={'/'} className="rounded-md border border-black p-2">
+            Home
+          </Link>
           <LogOutButton />
         </div>
       ) : null}

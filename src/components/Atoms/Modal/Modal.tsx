@@ -5,9 +5,10 @@ import { ModalWindow } from './ModalWindow';
 
 interface ModalProps {
   children?: ReactElement;
+  label?: string;
 }
 
-export const Modal: FC<ModalProps> = ({ children }) => {
+export const Modal: FC<ModalProps> = ({ children, label }) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
     <>
@@ -15,8 +16,9 @@ export const Modal: FC<ModalProps> = ({ children }) => {
         onClick={() => {
           setOpen(!open);
         }}
+        className="rounded-md border border-red-600 p-2 text-red-600"
       >
-        Modal
+        {label ? label : 'Delete your Account'}
       </button>
       {open ? (
         <ModalWindow

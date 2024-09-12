@@ -5,12 +5,12 @@ export const mockSets = [
     cards: [
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'op01-001',
       },
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'op01-001',
       },
     ],
@@ -21,12 +21,12 @@ export const mockSets = [
     cards: [
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'op02-001',
       },
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'op02-001',
       },
     ],
@@ -37,12 +37,12 @@ export const mockSets = [
     cards: [
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'op03-001',
       },
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'op03-001',
       },
     ],
@@ -53,12 +53,12 @@ export const mockSets = [
     cards: [
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'op05-001',
       },
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'op05-001',
       },
     ],
@@ -69,12 +69,12 @@ export const mockSets = [
     cards: [
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'ST01-001',
       },
       {
         img: { src: 'https://picsum.photos/210/300', alt: 'example image' },
-        name: 'luffy',
+        name: 'character-name',
         id: 'ST01-001',
       },
     ],

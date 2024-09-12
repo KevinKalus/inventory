@@ -10,7 +10,7 @@ export default {
       alt: 'example image',
       src: 'https://picsum.photos/210/300',
     },
-    name: 'luffy',
+    name: 'character-name',
     id: 'op-01',
   },
 } satisfies Meta<typeof Card>;

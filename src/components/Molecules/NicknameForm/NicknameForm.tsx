@@ -7,7 +7,7 @@ export const NicknameForm = () => {
       <h4 className="text-center">Your new Nickname</h4>
       <input type="text" name="nickname" />
       <div className="flex gap-5">
-        <button type="submit" className="border border-black p-2">
+        <button type="submit" className="rounded-md border border-black p-2">
           Change
         </button>
       </div>
