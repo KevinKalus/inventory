@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { FC, ReactElement } from 'react';
 
 import { deleteUser } from '@/app/actions';
@@ -5,20 +6,26 @@ import { deleteUser } from '@/app/actions';
 interface ModalWindowProps {
   onClick?: () => void;
   children?: ReactElement;
+  className?: string;
 }
 
-export const ModalWindow: FC<ModalWindowProps> = ({ children }) => {
+export const ModalWindow: FC<ModalWindowProps> = ({ children, className, onClick }) => {
   return (
     <>
       {children ? (
-        children
+        <article className="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-[rgba(0,0,0,0.5)]">
+          <div className="m-5 flex flex-col gap-5 rounded-md bg-blue-200 p-4 px-16">
+            {children}
+            <button onClick={onClick}>close</button>
+          </div>
+        </article>
       ) : (
         <form
           className="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-[rgba(0,0,0,0.5)]"
           // eslint-disable-next-line @typescript-eslint/no-misused-promises
           action={deleteUser}
         >
-          <div className="m-5 flex flex-col gap-5 rounded-md bg-blue-200 p-4">
+          <div className={clsx('m-5 flex flex-col gap-5 rounded-md bg-blue-200 p-4', className)}>
             <h2 className="self-center">Are you sure?</h2>
             <span className="text-xs text-gray-500">
               Please verify your action by typing in your
@@ -30,7 +37,7 @@ export const ModalWindow: FC<ModalWindowProps> = ({ children }) => {
             <button
               type="submit"
               className="w-1/2 self-center border border-red-600 hover:bg-red-600 hover:text-white"
-              // onClick={onClick}
+              onClick={onClick}
             >
               Delete
             </button>

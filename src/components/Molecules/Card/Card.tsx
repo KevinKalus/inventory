@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
 
-import { ModalButton } from '@/components/Organisms/ModalButton/ModalButton';
 import { imageProps } from '@/Types/Card';
 
 interface CardProps {
@@ -14,9 +13,7 @@ export const Card: FC<CardProps> = ({ img, name, id }) => {
   return (
     <article className="flex flex-col">
       <div className="mt-3 flex gap-1">
-        <ModalButton img={img}>
-          <Image src={img.src} alt={img.alt} height={200} width={200} />
-        </ModalButton>
+        <Image src={img.src} alt={img.alt} height={200} width={200} />
       </div>
       <p className="mt-2 w-full">
         {`Name: ${name}`}
