@@ -14,9 +14,11 @@ export const ModalWindow: FC<ModalWindowProps> = ({ children, className, onClick
     <>
       {children ? (
         <article className="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-[rgba(0,0,0,0.5)]">
-          <div className="m-5 flex flex-col gap-5 rounded-md bg-blue-200 p-4 px-16">
+          <div className="relative m-5 flex flex-col gap-5 rounded-md bg-blue-300 p-4 px-16">
             {children}
-            <button onClick={onClick}>close</button>
+            <button onClick={onClick} className="rounded-md border border-black p-2">
+              Close
+            </button>
           </div>
         </article>
       ) : (
