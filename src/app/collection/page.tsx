@@ -12,9 +12,9 @@ export default async function Collection() {
     <Protected>
       <span>{user?.nickname ? `Here is your collection, ${user?.nickname}` : 'Hello No-Nickname User'}</span>
       {sets.map((e, index) => (
-        <div key={index} className="mx-5 mt-10 flex flex-col items-center justify-center gap-5">
+        <div key={index} className="mx-5 my-5 flex flex-col items-center justify-center">
           <span>{e.setId as string}</span>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-5">
             {// eslint-disable-next-line @typescript-eslint/no-unsafe-call
             e?.imgs?.map((img, i: number) => (
               // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
