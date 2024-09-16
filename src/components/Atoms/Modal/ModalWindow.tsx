@@ -36,13 +36,18 @@ export const ModalWindow: FC<ModalWindowProps> = ({ children, className, onClick
             </span>
             <input type="email" name="email" placeholder="Email" className="px-2" required />
             <input type="password" name="password" placeholder="Password" className="px-2" required />
-            <button
-              type="submit"
-              className="w-1/2 self-center border border-red-600 hover:bg-red-600 hover:text-white"
-              onClick={onClick}
-            >
-              Delete
-            </button>
+            <div className="flex justify-center gap-4">
+              <button
+                type="submit"
+                className="rounded-md border border-red-600 p-2 hover:bg-red-600 hover:text-white"
+                onClick={onClick}
+              >
+                Delete
+              </button>
+              <button onClick={onClick} className="rounded-md border border-black p-2">
+                Close
+              </button>
+            </div>
           </div>
         </form>
       )}

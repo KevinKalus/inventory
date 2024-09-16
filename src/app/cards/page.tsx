@@ -1,6 +1,6 @@
 import { Accordion } from '@/components/Organisms/Accordion/Accordion';
 
-export default function Home() {
+export default function Cards() {
   return (
     <div className="mx-4 flex flex-col items-center gap-10">
       <p className="text-center underline underline-offset-8">
