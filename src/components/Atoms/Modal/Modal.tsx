@@ -2,35 +2,35 @@
 import Image from 'next/image';
 import { FC, ReactElement, useState } from 'react';
 
-import { CardProps } from '@/Types/Card';
 
 import { ModalWindow } from './ModalWindow';
 
 interface ModalProps {
   children?: ReactElement;
   label?: string;
-  card?: CardProps;
+  cardId?: string
+  img?: string;
+  alt?: string
 }
 
-export const Modal: FC<ModalProps> = ({ children, label, card }) => {
+export const Modal: FC<ModalProps> = ({ children, label, cardId, alt,img }) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
     <>
       {children ? (
         <div>
           <Image
-            src={card?.img.src ?? 'https://placehold.co/200x200?text=No+Image'}
-            alt={card?.img.alt ?? 'Card-Image'}
-            height={200}
-            width={200}
+            src={img ?? 'https://placehold.co/200x200?text=No+Image'}
+            alt={alt ?? 'Card-Image'}
+            height={500}
+            width={500}
             className="hover:cursor-pointer"
             onClick={() => {
               setOpen(!open);
             }}
           />
           <div className="flex flex-col">
-            <span>{`Name: ${card?.name}`}</span>
-            <span>{`ID: ${card?.id}`}</span>
+            <span>{`ID: ${cardId}`}</span>
           </div>
         </div>
       ) : (
