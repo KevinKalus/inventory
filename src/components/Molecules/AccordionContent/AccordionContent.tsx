@@ -1,18 +1,17 @@
-import { FC, ReactElement } from 'react';
+
+import { CardsGrid } from '@/components/Organisms/CardsGrid/CardsGrid';
+import { ImageFields } from '@/Types/Types';
+import { FC } from 'react';
 
 interface AccordionContentProps {
-  set: string;
-  children: React.ReactNode;
-  name: string;
-  content?: {
-    year: string;
-    content: ReactElement;
-  }[];
-  isOpen: boolean;
+  setId: string;
+  setName: string;
+  isOpen?: boolean;
   onToggle: () => void;
+  cards: ImageFields[]
 }
 
-export const AccordionContent: FC<AccordionContentProps> = ({ children, set, name, isOpen, onToggle }) => {
+export const AccordionContent: FC<AccordionContentProps> =  ({  setId, setName, isOpen, onToggle, cards }) => {
   return (
     <div className="py-2">
       <h2>
@@ -23,8 +22,8 @@ export const AccordionContent: FC<AccordionContentProps> = ({ children, set, nam
           }}
         >
           <span className="flex w-full justify-between text-xs">
-            <p className="w-1/2">{set}</p>
-            <p className="w-full">{name}</p>
+            <p className="w-1/2">{setId}</p>
+            <p className="w-full">{setName}</p>
           </span>
           <svg className="ml-8 shrink-0 fill-[#ffd6d4]" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
             <rect
@@ -49,7 +48,9 @@ export const AccordionContent: FC<AccordionContentProps> = ({ children, set, nam
         className={`grid overflow-hidden text-sm text-slate-600 transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-          <div className="pb-3">{children}</div>
+          <div className="pb-3">
+            <CardsGrid cards={cards}/>
+          </div>
         </div>
       </div>
     </div>

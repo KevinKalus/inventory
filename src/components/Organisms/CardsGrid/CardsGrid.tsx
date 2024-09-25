@@ -1,25 +1,20 @@
 import { FC } from 'react';
 
 
-import { getDatas } from '@/app/data';
 import { Card } from '@/components/Molecules/Card/Card';
+import { ImageFields } from '@/Types/Types';
 
 interface CardsGridProps {
+  cards: ImageFields[]
 }
 
-export const CardsGrid: FC<CardsGridProps> = async ({  }) => {
-  const sets = (await getDatas()).props.sets;
-  console.log(sets)
+export const CardsGrid: FC<CardsGridProps> =  ({ cards }) => {
 
   return (
-    <div className="flex flex-col">
-      {sets.map((set, index:number) =>( 
-        <>
-        <span className='text-center m-4 underline underline-offset-4'>{`${set.setId} ${set.setName}`}</span>
-        <div key={index} className='grid grid-cols-2 gap-2'>
-        {set.imgs?.map((img, index:number)=>(<Card key={index} img={"https:"+img.fields.file.url} id={img.fields.file.fileName.split(".")[0]}/>))}
-        </div>
-        </>))}     
+    <div  className='grid grid-cols-2 gap-2'>
+      {cards.map((card, index) =>( <Card imgSrc={"https:"+card.fields.file.url} id={card.fields.file.fileName} key={index}/> ))}
+       
     </div>
+  
   );
 };

@@ -10,7 +10,6 @@ export const getDatas = async () => {
 
   return {
     props: {
-      data: resp.items,
       sets: resp.items.map(e => e.fields),
     },
   };

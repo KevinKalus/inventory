@@ -1,33 +1,33 @@
 'use client';
 import clsx from 'clsx';
-import { FC, useState } from 'react';
+import { FC,  useState } from 'react';
 
-import { mockSets } from '@/mocks/mockSets';
 
 import { AccordionContent } from '../../Molecules/AccordionContent/AccordionContent';
-import { CardsGrid } from '../CardsGrid/CardsGrid';
+import { Sets } from '@/Types/Types';
 
 interface AccordionProps {
   className?: string;
+  sets: Sets[]
 }
 
-export const Accordion: FC<AccordionProps> = ({ className }) => {
+export const Accordion: FC<AccordionProps> = ({ className,sets }) => {
   const [expand, setExpand] = useState<number | false>(false);
   const handleToggle = (index: number) => {
     setExpand(prevIndex => (prevIndex === index ? false : index));
   };
   return (
+    
     <div className={clsx('divide-y divide-slate-200', className)}>
-      {mockSets.map((set, index) => (
+      {sets.map((set, index) => (
         <AccordionContent
           key={index}
-          set={set.set}
-          name={set.name}
+          setId={set.setId}
+          setName={set.setName}
           isOpen={expand === index}
           onToggle={() => handleToggle(index)}
-        >
-          <CardsGrid cards={set.cards} />
-        </AccordionContent>
+          cards={set.imgs}
+        />     
       ))}
     </div>
   );
