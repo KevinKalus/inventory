@@ -5,8 +5,12 @@ import { Sets } from '@/Types/Types';
 
 
 export default async function Cards() {
-  const sets = (await getDatas()).props.sets ;
-
+  const sets = (await getDatas()).props.sets as Sets[];
+  sets.sort((a, b) => {
+    return a.setId?.localeCompare(b.setId);
+  });
+  
+  console.log(sets);
   return (
     <div className="mx-4 flex flex-col items-center gap-10">
       <p className="text-center underline underline-offset-8">
