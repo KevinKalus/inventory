@@ -12,7 +12,7 @@ export default async function Cards() {
   
   console.log(sets);
   return (
-    <div className="mx-4 flex flex-col items-center gap-10">
+    <div className="mx-4 flex flex-col items-center gap-10 mt-20">
       <p className="text-center underline underline-offset-8">
         Here you can find all the Cards available at the moment
       </p>
