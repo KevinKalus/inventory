@@ -1,3 +1,4 @@
+'use server'
 import { Accordion } from '@/components/Organisms/Accordion/Accordion';
 import { getDatas } from '../data';
 import { Sets } from '@/Types/Types';
