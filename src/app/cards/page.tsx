@@ -10,7 +10,6 @@ export default async function Cards() {
     return a.setId?.localeCompare(b.setId);
   });
   
-  console.log(sets);
   return (
     <div className="mx-4 flex flex-col items-center gap-10 mt-20">
       <p className="text-center underline underline-offset-8">

@@ -13,7 +13,7 @@ export const Card: FC<CardProps> = ({ imgSrc,  id }) => {
     <Modal  cardId={id} img={imgSrc}>
     <article className="flex flex-col">
       <div className="mt-3 flex gap-1">
-        <Image src={imgSrc} alt={""} height={200} width={200} />
+        <Image src={imgSrc} alt={id} height={400} width={400} />
       </div>
       <p className="mt-2 w-full">
         <br />

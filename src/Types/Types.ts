@@ -17,3 +17,7 @@ export type Sets = {
   setName: string;
   imgs: ImageFields[]
 }
+
+export type Collection = {
+ collection: [{amount: Number, fields: {title: string, file:{fileName:string,  url: string}}}]
+}
