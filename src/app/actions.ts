@@ -5,6 +5,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 import { User } from '@/Types/User';
+import { Collection } from '@/Types/Types';
 export const Login = async (formData: FormData) => {
   const email = formData.get('email') ?? '';
   const password = formData.get('password') ?? '';
@@ -89,19 +90,35 @@ export const deleteUser = async (formData: FormData) => {
   }
 };
 
-// export const deleteUser = async (formData: FormData) => {
-//   // passwort aus dem Inputfeld holen und anschließend hashen
-//   const password = formData.get('password');
-//   const hashedPassword = await bcrypt.hash(password as string, 10);
-//   // den nutzer mit diesem passwort aus der DB holen
-//   const DBuser = await sql`SELECT * from users where password = ${hashedPassword}`;
-//   const user = DBuser.rows[0];
+export const getCollections = async ()=> {
+  const userId=cookies().get("user")
+  const collections = await sql `SELECT
+    id,
+    name,
+    jsonb_array_elements(cards) AS card
+FROM
+    collections;
+`
+return collections
+}
 
-//   if (user) {
-//     const passwordMatches = await bcrypt.compare(hashedPassword, user.password as string);
-//     if (passwordMatches) {
-//       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//       const deleteUser = sql`DELETE FROM users WHERE password = ${hashedPassword}`;
-//     }
-//   }
-// };
+export const createCollection = async  (collection: Collection[]) => {
+  const userId=cookies().get("user")
+  const collectionJSOn = 
+    collection.map(e => ({
+      amount: e.amount,
+      name: e.name,
+      imgSrc: e.imgSrc
+    }))
+
+  const addCollection= await sql `INSERT INTO collections (id, name, cards) VALUES (
+  ${userId!.value},  
+  'test',
+    '[
+        ${JSON.stringify(collectionJSOn)}
+    ]'    
+);
+`
+  return addCollection
+}
+

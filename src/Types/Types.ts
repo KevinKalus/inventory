@@ -19,5 +19,7 @@ export type Sets = {
 }
 
 export type Collection = {
- collection: [{amount: Number, fields: {title: string, file:{fileName:string,  url: string}}}]
+   amount: number;
+   name: string;
+   imgSrc: string
 }

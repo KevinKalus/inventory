@@ -1,57 +1,38 @@
 import Image from 'next/image';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import { Modal } from '@/components/Atoms/Modal/Modal';
+import { useCollection } from '@/utils/ContextProvider';
 
 interface CardProps {
   imgSrc: string;
-  id: string;
-  onChange?: (id: string, newAmount: number)=> void
+  cardName: string;
+  user?: boolean
 }
 
-export const Card: FC<CardProps> = ({ imgSrc,  id ,onChange }) => {
-  const [collection, setCollection] = useState({
-    amount: 0,
-    name: id
-  })
-  const increment = () => {
-    setCollection({
-      amount: collection.amount + 1,
-      name: id
-    })
-  }
-  const clearAmount = () => {
-    setCollection({
-      amount: collection.amount = 0,
-      name: id
-    })
-  }
-  const decrease = () => {
-    if (collection.amount > 0) {
-      setCollection({
-        amount: collection.amount -1,
-        name:id});
-    }
-  };
-  console.log("CARDS COMPONENT",collection)
+export const Card: FC<CardProps> = ({ imgSrc,  cardName,   }) => {
+  const {collection, increment, decrease, clearAmount} = useCollection()
+  const currentItem = collection.find(item => item.name === cardName); 
+
   return (
     <div>
-    <Modal  cardId={id} img={imgSrc}>
+    <Modal  cardId={cardName} img={imgSrc}>
     <article className="flex flex-col">
       <div className="mt-3 flex gap-1">
-        <Image src={imgSrc} alt={id} height={400} width={400} />
+        <Image src={imgSrc} alt={cardName} height={400} width={400} />
       </div>
     </article>
     </Modal> 
       <span>
-      {`Amount: ${collection.amount}`}  
-      </span>  
-    <div className='flex gap-4'>
-    <button className='border w-1/3 px-2' onClick={increment}>+</button>
-    <button className='border w-1/3 px-2' onClick={clearAmount}>clear</button>
-    <button className='border w-1/3 px-2' onClick={decrease}>-</button>
-
-    </div>
+      {`Amount: ${currentItem ? currentItem.amount : 0 }`}  
+      </span> 
+  
+      <div className='flex gap-4'>
+    <button className='border w-1/3 px-2' onClick={()=>increment(cardName, imgSrc)}>+</button>
+    <button className='border w-1/3 px-2' onClick={()=>clearAmount(cardName, imgSrc)}>clear</button>
+    <button className='border w-1/3 px-2' onClick={()=>decrease(cardName, imgSrc)}>-</button>
+    </div>  
+    
     </div>
   );
 };
